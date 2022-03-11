@@ -66,7 +66,6 @@ const createPost = (post) => {
                   </a>
                   <a href="#" class="post__user">phero</a>
                 </div>
-0
                 <button class="post__more-options">
                   <i class="fa-solid fa-ellipsis"></i>
                 </button>
@@ -131,6 +130,7 @@ const createPost = (post) => {
 };
 
 const showPosts = (posts) => {
+  // document.getElementById('question-ans').style.display = "block";
   const productsContainer = document.getElementById("posts");
   productsContainer.innerHTML = "";
 
@@ -140,8 +140,10 @@ const showPosts = (posts) => {
   });
 };
 
+
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
+  document.getElementById("liked").innerHTML = ''
   likedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("liked").appendChild(div);
@@ -150,7 +152,8 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  document.getElementById("reported").innerHTML = ''
+  reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
